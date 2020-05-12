@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/Vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<!--view-->
+<div id="app">
+    <ul>
+        <li v-for="item in starts">{{item}}</li>
+    </ul>
+
+    <ul>
+        <li v-for="item,index in students" :key="index">
+            <h4>{{index}}{{item.studentName}}</h4>
+            <p>{{item.age}}</p>
+            <div>{{item.school}}</div>
+        </li>
+    </ul>
+</div>
+
+<script type="text/javascript">
+
+    // console.log(Vue)
+
+    var app = new Vue({
+        el: "#app",
+        <!--model-->
+        data: {
+            starts:["蔡徐坤","五五开","卢本伟"],
+            students:[{studentName:"蔡徐坤",age:25,school:"蓝翔"},{studentName:"五五开",age:26,school:"新东方"},{studentName:"卢本伟",age:27,school:"亿力"}]
+        }
+    })
+</script>
+</body>
+</html>

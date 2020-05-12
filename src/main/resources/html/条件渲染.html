@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/Vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<!--view-->
+<div id="app">
+    <p>{{ message }}</p>
+    <h1>用户名：{{username}}</h1>
+<!-- 条件渲染 v-if 不显示时，第一次就直接不渲染 如果内容已经显示将其改为不显示，将内容直接从DOM去除-->
+    <h3 v-if="isVip">用户类型：VIP</h3>
+<!--  v-if与  v-else 元素中间不能有其他元素-->
+    <h4 v-else>用户类型：普通用户</h4>
+
+    <hr>
+    <h1>用户登陆时间</h1>
+    <h3 v-if="age>18">允许24小时登录</h3>
+    <h3 v-else-if="age>14">允许8小时登录</h3>
+    <h3 v-else>允许4小时登录</h3>
+</div>
+
+<script type="text/javascript">
+
+    // console.log(Vue)
+
+    let app = new Vue({
+        el: "#app",
+        <!--model-->
+        data: {
+            message: "Hello Vue",
+            username:"小明",
+            isVip:false,
+            age:"18"
+        }
+    })
+</script>
+</body>
+</html>

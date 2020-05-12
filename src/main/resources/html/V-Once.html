@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/Vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+<!--view-->
+<div id="app">
+    <h1>{{msg}}</h1>
+<!-- 一次插入 不能修改  会以文本形式输出 -->
+    <h1 v-once>{{msg}}</h1>
+
+    <h1 v-html="m"></h1>
+
+<!--   v-bind:id -->
+    <div :id="idname">
+        <h1>登陆</h1>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    // console.log(Vue)
+
+    let app = new Vue({
+        el: "#app",
+        <!--model-->
+        data: {
+            msg:"once",
+            m:"<span>555</span>",
+            idname:"login"
+        }
+
+    })
+</script>
+</body>
+</html>

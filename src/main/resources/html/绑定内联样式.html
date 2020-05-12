@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/Vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+<!--view-->
+<div id="app">
+    <div style="width :100px;height: 100px;background: skyblue"></div>
+
+    <div style="background: chartreuse;width: 100px;height: 100px" :style="{border: borderW+'px solid red'}"></div>
+</div>
+
+<script type="text/javascript">
+
+    // console.log(Vue)
+
+    let app = new Vue({
+        el: "#app",
+        <!--model-->
+        data: {
+            borderW:20
+        }
+
+    })
+</script>
+</body>
+</html>

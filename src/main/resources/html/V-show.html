@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/Vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<style type="text/css">
+    #pane{
+        width: 200px;
+        height: 200px;
+        background: skyblue;
+    }
+</style>
+<body>
+<!--view-->
+<div id="app">
+<!--  不显示 时 display将设置为none  反复需要切换内容时使用v-show-->
+    <div v-show="isShow" id="pane">
+        HelloVue
+    </div>
+<!--  v-on:click  -->
+    <button @click="showPane">切换显示内容</button>
+
+</div>
+
+<script type="text/javascript">
+
+    // console.log(Vue)
+
+    let app = new Vue({
+        el: "#app",
+        <!--model-->
+        data: {
+            isShow:true
+        },
+        methods:{
+          showPane:function () {
+              app.isShow=!app.isShow;
+          }
+        }
+    })
+</script>
+</body>
+</html>
